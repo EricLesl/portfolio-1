@@ -8,7 +8,7 @@
 }
 
 .left-side-nav{
-    background-color: rgb(155, 134, 248);
+    background-color: rgb(248, 247, 255);
     overflow-y: auto;
     width: 226px;
     z-index: 1200;
@@ -22,26 +22,24 @@
     gap: 12px;
     justify-content: flex-start;
     margin-bottom: 12px;
-    margin-top: 12px;
+    margin-top: 24px;
     width: 100%;
     padding: 0px 16px 0px 16px;
     box-sizing: border-box;
 }
 
 .nav-item{
-    border: 1px solid #0000;
-    border-radius: 16px;
+    border-radius: 12px;
     cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin: 0;
     height: 104px;
-    padding: 0;
+    padding: 12px;
     pointer-events: all;
-    position: relative;
     width: 100%;
-    background-color: rgb(201, 191, 207);
+    background-color: rgb(199, 145, 231);
+    box-sizing: border-box;
+    font-family: 'open-sans', sans-serif;
+    font-size: 18px;
+    color: white;
 }
 
 .main-content{
@@ -51,32 +49,51 @@
     height: auto;
     justify-content: flex-start;
     width: calc(100%);
-    background-color: rgb(255, 247, 255);
+    background-color: rgb(248, 247, 255);
     overflow-y: auto; /* Add this line if not present */
+    padding: 24px 24px 24px 0;
+    box-sizing: border-box;
+}
+
+.content-section{
+    margin-bottom: 24px;
+    border-radius: 12px;
+    padding: 12px;
+    box-sizing: border-box;
+    font-family: 'open-sans', sans-serif;
+    padding: 48px;
+
+    h1{
+        font-weight: 400;
+        line-height: 1.5vw;
+        font-size: 1.5vw;
+        margin: 0;
+        padding: 0;
+    }
 }
 
 #section1{
     width: 100%;
     height: 1000px!important;
-    background-color: lightgrey;
+    background-color: rgb(203, 235, 118);
 }
 
 #section2{
     width: 100%;
     height: 1000px;
-    background-color: peru;
+    background-color: rgb(98, 224, 136);
 }
 
 #section3{
     width: 100%;
     height: 1000px;
-    background-color: purple;
+    background-color: rgb(197, 82, 197);
 }
 
 #section4{
     width: 100%;
     height: 1000px;
-    background-color: lightgreen;
+    background-color: rgb(114, 235, 114);
 }
 
 #section5{

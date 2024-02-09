@@ -39,10 +39,10 @@ export class AppComponent {
 
       if (visibilityPercentage >= 50) {
         // Increase nav item height by 100px if section takes up 50% or more of the view
-        this.renderer.setStyle(targetNavItem, 'height', '204px'); // Assuming original height is 104px
+        this.renderer.setStyle(targetNavItem, 'height', '204px');
       } else if ((sectionBottom) <= 0) {
         // If the section has been scrolled past (its bottom is above the viewable area), set nav item height to 50% of its original height
-        this.renderer.setStyle(targetNavItem, 'height', '52px'); // 50% of the original height (assuming original is 104px)
+        this.renderer.setStyle(targetNavItem, 'height', '52px');
       } else {
         // Reset to original height otherwise
         this.renderer.setStyle(targetNavItem, 'height', '104px');
@@ -53,7 +53,15 @@ export class AppComponent {
   scrollToSection(sectionId: string) {
     const sectionElement = this.mainContent.nativeElement.querySelector(`#${sectionId}`);
     if (sectionElement) {
-      sectionElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      // Calculate the top position of the element within the container
+      const elementTop = sectionElement.offsetTop;
+      // Adjust the position to include the desired space above
+      const positionWithSpaceAbove = elementTop - 24;
+      // Scroll the main content container to the adjusted position
+      this.mainContent.nativeElement.scrollTo({
+        top: positionWithSpaceAbove,
+        behavior: 'smooth'
+      });
     }
   }
 }
