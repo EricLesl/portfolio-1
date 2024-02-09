@@ -17,7 +17,7 @@ export class AppComponent {
   
   ngAfterViewInit() {
     this.doResize();   
-    this.addListenerBack();
+    this.addListener();
   }
 
   doResize(){
@@ -56,10 +56,6 @@ export class AppComponent {
   
 
   scrollToSection(sectionId: string) {
-    if (this.listenerRemovalFunction) {
-      this.listenerRemovalFunction();
-    }
-
     const sectionElement = this.mainContent.nativeElement.querySelector(`#${sectionId}`);
     if (sectionElement) {
       // Calculate the target position with 24px space above
@@ -68,16 +64,12 @@ export class AppComponent {
       // Use GSAP to animate to the target position with a bounce effect
       gsap.to(this.mainContent.nativeElement, {
         scrollTo: { y: targetPosition, autoKill: false },
-        duration: 2,
-        ease: "bounce.out",
-        onComplete: () => {
-          this.addListenerBack();
-        }
+        duration: 1.5
       });
     }
   }
 
-  addListenerBack() {
+  addListener() {
     this.listenerRemovalFunction = this.renderer.listen(this.mainContent.nativeElement, 'scroll', () => {
       this.doResize();
     });
