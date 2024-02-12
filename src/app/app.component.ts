@@ -38,18 +38,11 @@ export class AppComponent {
       const targetNavItem = Array.from(navItems).find(item => item.getAttribute('data-target') === section.getAttribute('id'));
   
       if (visibilityPercentage >= 50) {
-        // Option 1: Adjust flex-grow to make the item grow
-        this.renderer.setStyle(targetNavItem, 'flex-grow', '4'); // Example: make it grow more than others
-        // Option 2: Increase padding for visual size change
-        // this.renderer.setStyle(targetNavItem, 'padding', '24px'); // Increase padding to simulate larger size
+        this.renderer.setStyle(targetNavItem, 'flex-grow', '4');
       } else if (sectionBottom <= 0) {
-        // Reduce flex-grow or reset padding for items that have been scrolled past
-        this.renderer.setStyle(targetNavItem, 'flex-grow', '0.1'); // Example: make it take less space
-        // this.renderer.setStyle(targetNavItem, 'padding', '6px'); // Decrease padding to simulate smaller size
+        this.renderer.setStyle(targetNavItem, 'flex-grow', '0.1');
       } else {
-        // Reset flex-grow and padding to original state for all other items
-        this.renderer.setStyle(targetNavItem, 'flex-grow', '1'); // Reset to default flex-grow
-        // this.renderer.setStyle(targetNavItem, 'padding', '12px'); // Reset padding to original
+        this.renderer.setStyle(targetNavItem, 'flex-grow', '1');
       }
     });
   }
@@ -61,7 +54,6 @@ export class AppComponent {
       // Calculate the target position with 24px space above
       const targetPosition = sectionElement.offsetTop - 24;
   
-      // Use GSAP to animate to the target position with a bounce effect
       gsap.to(this.mainContent.nativeElement, {
         scrollTo: { y: targetPosition, autoKill: false },
         duration: 1.5
