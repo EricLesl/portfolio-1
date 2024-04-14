@@ -2,21 +2,28 @@
 <div class="container">
   <div class="left-side-nav">
     <div class="inner-nav">
-      <div class="nav-item" data-target="section1" (click)="scrollToSection('section1')">Welcome</div>
-      <div class="nav-item" data-target="section2" (click)="scrollToSection('section2')">About</div>
-      <div class="nav-item" data-target="section3" (click)="scrollToSection('section3')">Education</div>
-      <div class="nav-item" data-target="section4" (click)="scrollToSection('section4')">Projects</div>
-      <div class="nav-item" data-target="section5" (click)="scrollToSection('section5')">Goals</div>
-      <div class="nav-item" data-target="section6" (click)="scrollToSection('section6')">Contact</div>
+      <div class="nav-item about-nav-item" data-target="section1" (click)="scrollToSection('section1')">About</div>
+      <div class="nav-item approach-nav-item" data-target="section2" (click)="scrollToSection('section2')">Approach</div>
+      <div class="nav-item projects-nav-item" data-target="section3" (click)="scrollToSection('section3')">Projects</div>
+      <div class="nav-item inclusive-insights-nav-item" data-target="section4" (click)="scrollToSection('section4')">Inclusive Insights</div>
+      <div class="nav-item contact-nav-item" data-target="section5" (click)="scrollToSection('section5')">Contact</div>
     </div>
   </div>
 
   <div #mainContent class="main-content">
-    <section id="section1" class="content-section"><h1>Welcome</h1></section>
-    <section id="section2" class="content-section"><h1>About</h1></section>
-    <section id="section3" class="content-section"><h1>Education</h1></section>
-    <section id="section4" class="content-section"><h1>Projects</h1></section>
-    <section id="section5" class="content-section"><h1>Goals</h1></section>
-    <section id="section6" class="content-section"><h1>Contact</h1></section>
+    <section id="section1" class="content-section">
+      <div class="name-tag-container">
+          <img id="nameTag" src="assets/svgs/name_tag.svg" alt="Name Tag">
+          <img class="text-bubble bubble-top" src="assets/svgs/text-outline-1.svg" alt="Text Bubble Top">
+          <img class="text-bubble bubble-right" src="assets/svgs/text-bubble-2.svg" alt="Text Bubble Right">
+          <img class="text-bubble bubble-bottom-right" src="assets/svgs/text-bubble-3.svg" alt="Text Bubble Bottom Right">
+          <img class="text-bubble bubble-bottom-left" src="assets/svgs/text-bubble-4.svg" alt="Text Bubble Bottom Left">
+          <img class="text-bubble bubble-left" src="assets/svgs/text-bubble-5.svg" alt="Text Bubble Left">
+      </div>
+    </section>
+    <section id="section2" class="content-section"></section>
+    <section id="section3" class="content-section"></section>
+    <section id="section4" class="content-section"></section>
+    <section id="section5" class="content-section"></section>
   </div>
 </div>
