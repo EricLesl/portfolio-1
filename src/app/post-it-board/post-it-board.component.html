@@ -1,5 +1,5 @@
 <div class="post-it-board" #board>
-    <ng-container *ngFor="let note of notes; let i = index">
+    <ng-container *ngFor="let note of notes$ | async; let i = index">
       <textarea [ngStyle]="{'background-color': note.color}" 
                 class="sticky-note" 
                 [(ngModel)]="note.text" 

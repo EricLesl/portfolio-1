@@ -1,11 +1,7 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
-
-interface Note {
-  x: number;
-  y: number;
-  text: string;
-  color: string;
-}
+import { Note } from '../interfaces/note.interface';
+import { NoteService } from '../note.service';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-post-it-board',
@@ -13,12 +9,17 @@ interface Note {
   styleUrls: ['./post-it-board.component.scss']
 })
 export class PostItBoardComponent {
-  notes: Note[] = [];
+  private notesSubject = new BehaviorSubject<Note[]>([]);
+  notes$: Observable<Note[]>;
   
   @ViewChild('board', { static: true }) boardElementRef: ElementRef;
 
   private dragStartOffsetX: number = 0;
   private dragStartOffsetY: number = 0;
+
+  constructor(private noteService: NoteService){
+    this.notes$ = this.noteService.getNotes();
+  }
 
   addNote() {
     const colors = ['#ffadad', '#ffd6a5', '#fdffb6', '#caffbf', '#9bf6ff', '#a0c4ff', '#bdb2ff', '#ffc6ff'];
@@ -38,12 +39,16 @@ export class PostItBoardComponent {
     const randomY = Math.random() * maxY;
   
     // Add the note with the random position
-    this.notes.push({
+    const newNote: Note = {
       x: randomX,
       y: randomY,
       text: '',
       color: randomColor
-    });
+    };
+    const currentNotes = this.notesSubject.value;
+    const updatedNotes = [...currentNotes, newNote];
+    
+    this.notesSubject.next(updatedNotes);
   }
   
   
@@ -72,10 +77,7 @@ export class PostItBoardComponent {
   }
 
   onNoteEditDone(note: Note, index: number) {
-    // Call the API to save the note
-    // You can use note.text to get the updated text
-    // and index if you need to identify the note further
     console.log(`Saving note at index ${index} with text: ${note.text}`);
-    // Replace the console.log with your actual API call
+    this.noteService.addNote(note);
   }
 }
