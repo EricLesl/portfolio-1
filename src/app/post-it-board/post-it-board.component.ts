@@ -24,17 +24,28 @@ export class PostItBoardComponent {
     const colors = ['#ffadad', '#ffd6a5', '#fdffb6', '#caffbf', '#9bf6ff', '#a0c4ff', '#bdb2ff', '#ffc6ff'];
     const randomColor = colors[Math.floor(Math.random() * colors.length)];
   
-    // Assuming this.boardElementRef is correctly referencing the .post-it-board element
     const boardRect = this.boardElementRef.nativeElement.getBoundingClientRect();
   
-    // Add the note with the calculated position
+    const noteWidth = 100;
+    const noteHeight = 100;
+  
+    // Calculate the maximum x and y values to ensure the note stays within the board
+    const maxX = boardRect.width - noteWidth;
+    const maxY = boardRect.height - noteHeight;
+  
+    // Generate random x and y positions within these maximum values
+    const randomX = Math.random() * maxX;
+    const randomY = Math.random() * maxY;
+  
+    // Add the note with the random position
     this.notes.push({
-      x: boardRect.x + 100,
-      y: boardRect.y + 100,
+      x: randomX,
+      y: randomY,
       text: '',
       color: randomColor
     });
   }
+  
   
   onDragStart(event: DragEvent, note: Note) {
     // Calculate the offset from the mouse to the top-left corner of the note
