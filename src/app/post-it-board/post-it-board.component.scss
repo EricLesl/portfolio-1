@@ -1,0 +1,42 @@
+.post-it-board {
+    background: url('../../assets/images/postitboard.jpeg') no-repeat center center;
+    background-size: cover;
+    width: 100%;
+    height: 550px; 
+    border: 20px solid #E3A86D;
+    border-radius: 4px;
+    box-sizing: border-box;
+    position: relative;
+  }
+  
+  .sticky-note {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    resize: none;
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+  }
+
+  .post-it-options{
+    cursor: pointer;
+    border-radius: 7.144px;
+    border: 0.4px solid #000;
+    background: #FFF;
+    box-shadow: 0px 3.572px 3.572px 0px rgba(0, 0, 0, 0.25);
+    width: 2em;
+    height: 3em;
+    margin-left: 10px;
+    margin-top: calc(275px - 3em);
+    padding: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  #addNoteImg{
+    height: auto;
+    width: 1.5em;
+  }

@@ -1,0 +1,17 @@
+<div class="post-it-board" #board>
+    <ng-container *ngFor="let note of notes">
+      <textarea [ngStyle]="{'background-color': note.color}" 
+                class="sticky-note" 
+                [(ngModel)]="note.text" 
+                [style.top]="note.y + 'px'" 
+                [style.left]="note.x + 'px'"
+                draggable="true"
+                (dragend)="onDragEnd($event, note)"
+                (dragstart)="onDragStart($event, note)">
+      </textarea>
+    </ng-container>
+    <div class="post-it-options" (click)="addNote()">
+      <img id="" src="../../assets/svgs/add-note.svg" alt="Add">
+    </div>
+  </div>
+  
