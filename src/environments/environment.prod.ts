@@ -8,6 +8,6 @@ export const environment = {
     messagingSenderId: "363612306046",
     appId: "1:363612306046:web:3eee8bbd5b21a929d9762f",
     measurementId: "G-RC9JJX2PJ3",
-    databaseURL: "YOUR_DATABASE_URL"
+    databaseURL: "https://lily-portfolio-1dbc3-default-rtdb.firebaseio.com/"
   }
 };
