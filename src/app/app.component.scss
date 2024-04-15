@@ -113,7 +113,7 @@
 #section1{
     width: 100%;
     height: 1000px!important;
-    background-color: #d9d9d9;
+    background-color: #F3EFEF;
     position: relative;
     justify-content: center;
     align-items: center;
@@ -122,49 +122,72 @@
 
 .name-tag-container {
     position: relative;
-    display: inline-block; /* Align the bubbles to this block */
 }
 
 .text-bubble {
     position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 22vw;
+    height: 20vw;
+}
+
+.text-bubble img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.bubble-text {
+    position: absolute;
+    color: black;
+    font-family: Signika Negative;
+    font-weight: 700;
+    font-size: 2em;
+    text-align: center;
+    width: 70%;
+    transform: rotate(0deg)!important; 
 }
 
 .bubble-top {
-    top: -100%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 463px;
-    height: 331px;
+    top: -105%;
+}
+
+.img-bubble-top {
+    transform: scaleX(-1);
 }
 
 .bubble-right {
-    top: 10%;
-    right: -100%;
-    transform: translateY(-50%);
-    width: 463px;
-    height: 331px;
+    top: -40%;
+    right: -90%;
 }
 
 .bubble-bottom-right {
     bottom: -100%;
-    left: 120%;
-    transform: translateX(-50%);
-    width: 463px;
-    height: 331px;
+    left: 60%;
+}
+
+.img-bubble-bottom-right {
+    transform: rotate(180deg) scaleX(-1);
 }
 
 .bubble-bottom-left {
     bottom: -100%;
-    left: -30%;
-    width: 463px;
-    height: 331px;
+    left: -80%;
+}
+
+.img-bubble-bottom-left {
+    transform: rotate(180deg);
 }
 
 .bubble-left {
-    top: -70%;
-    left: -70%;
-    width: 22vw;
-    height: auto;
+    top: -50%;
+    left: -100%;
+}
+
+.img-bubble-left {
+    transform: scaleX(-1);
 }
 
 app-post-it-board{
