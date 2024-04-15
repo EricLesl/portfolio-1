@@ -14,14 +14,15 @@
     "@angular/common": "^17.3.4",
     "@angular/compiler": "^17.3.4",
     "@angular/core": "^17.3.4",
+    "@angular/fire": "^17.0.1",
     "@angular/forms": "^17.3.4",
     "@angular/platform-browser": "^17.3.4",
     "@angular/platform-browser-dynamic": "^17.3.4",
     "@angular/router": "^17.3.4",
     "firebase": "^10.11.0",
     "gsap": "^3.12.5",
-    "rxjs": "~7.5.0",
-    "tslib": "^2.3.0",
+    "rxjs": "^7.8.0",
+    "tslib": "^2.6.2",
     "zone.js": "~0.14.4"
   },
   "devDependencies": {

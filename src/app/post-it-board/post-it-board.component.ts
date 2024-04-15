@@ -1,7 +1,7 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Note } from '../interfaces/note.interface';
 import { NoteService } from '../note.service';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, Subscription, tap } from 'rxjs';
 
 @Component({
   selector: 'app-post-it-board',
@@ -9,8 +9,8 @@ import { BehaviorSubject, Observable } from 'rxjs';
   styleUrls: ['./post-it-board.component.scss']
 })
 export class PostItBoardComponent {
-  private notesSubject = new BehaviorSubject<Note[]>([]);
   notes$: Observable<Note[]>;
+  private notesSubscription: Subscription;
   
   @ViewChild('board', { static: true }) boardElementRef: ElementRef;
 
@@ -21,23 +21,27 @@ export class PostItBoardComponent {
     this.notes$ = this.noteService.getNotes();
   }
 
+  ngOnDestroy() {
+    this.notesSubscription.unsubscribe();
+  }
+
   addNote() {
     const colors = ['#ffadad', '#ffd6a5', '#fdffb6', '#caffbf', '#9bf6ff', '#a0c4ff', '#bdb2ff', '#ffc6ff'];
     const randomColor = colors[Math.floor(Math.random() * colors.length)];
-  
+    
     const boardRect = this.boardElementRef.nativeElement.getBoundingClientRect();
-  
+    
     const noteWidth = 100;
     const noteHeight = 100;
-  
+    
     // Calculate the maximum x and y values to ensure the note stays within the board
     const maxX = boardRect.width - noteWidth;
     const maxY = boardRect.height - noteHeight;
-  
+    
     // Generate random x and y positions within these maximum values
     const randomX = Math.random() * maxX;
     const randomY = Math.random() * maxY;
-  
+    
     // Add the note with the random position
     const newNote: Note = {
       x: randomX,
@@ -45,11 +49,10 @@ export class PostItBoardComponent {
       text: '',
       color: randomColor
     };
-    const currentNotes = this.notesSubject.value;
-    const updatedNotes = [...currentNotes, newNote];
     
-    this.notesSubject.next(updatedNotes);
+    this.noteService.addNote(newNote);
   }
+  
   
   
   onDragStart(event: DragEvent, note: Note) {
@@ -77,7 +80,11 @@ export class PostItBoardComponent {
   }
 
   onNoteEditDone(note: Note, index: number) {
-    console.log(`Saving note at index ${index} with text: ${note.text}`);
-    this.noteService.addNote(note);
+    this.noteService.getNoteAtIndex(index).subscribe(x => {
+      if (x.text !== note.text) {
+        console.log(`Saving note at index ${index} with text: ${note.text}`);
+        this.noteService.updateNote(x.id, note);
+      }
+    });
   }
 }

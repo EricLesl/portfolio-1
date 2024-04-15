@@ -5,11 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PostItBoardComponent } from './post-it-board/post-it-board.component';
 import { FormsModule } from '@angular/forms';
-
-import { provideFirebaseApp, getApp, initializeApp } from '@angular/fire/app';
-import { getDatabase, provideDatabase } from '@angular/fire/database';
+import { AngularFireModule } from "@angular/fire/compat";
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { environment } from 'src/environments/environment';
-
 
 @NgModule({
   declarations: [
@@ -20,8 +18,8 @@ import { environment } from 'src/environments/environment';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
-    provideDatabase(() => getDatabase()),
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireDatabaseModule
   ],
   providers: [],
   bootstrap: [AppComponent]

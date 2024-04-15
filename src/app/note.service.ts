@@ -1,30 +1,37 @@
 import { Injectable } from '@angular/core';
-import { Database, listVal, objectVal, push, ref, set } from '@angular/fire/database';
+import { AngularFireDatabase, AngularFireList  } from '@angular/fire/compat/database';
 import { Note } from './interfaces/note.interface';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class NoteService {
-  
-  constructor(private db: Database) { }
+  notesRef: AngularFireList<Note>;
+
+  constructor(private db: AngularFireDatabase) {
+    this.notesRef = this.db.list('notes');
+   }
 
   // Method to add a new note
   addNote(note: Note) {
-    const notesRef = ref(this.db, 'notes');
-    push(notesRef, note);
+    return this.notesRef.push(note);
   }
 
   // Method to get all notes
-  getNotes(): Observable<Note[]>{
-    const notesRef = ref(this.db, 'notes');
-    return listVal(notesRef, { keyField: 'id' }); // Adjusted to use 'keyField' instead of 'idField'
+  getNotes(): Observable<Note[]> {
+    return this.notesRef.snapshotChanges().pipe(
+      map(actions => actions.map(action => ({ id: action.key, ...action.payload.val() })))
+    );
   }
-
   // Method to update a note by its ID
   updateNote(id: string, note: Partial<Note>) {
-    const noteRef = ref(this.db, `notes/${id}`);
-    return set(noteRef, note);
+    return this.notesRef.update(id, note);
+  }
+
+  getNoteAtIndex(index: number): Observable<Note> {
+    return this.getNotes().pipe(
+      map(notes => notes[index])
+    );
   }
 }
