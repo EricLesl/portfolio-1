@@ -5,13 +5,14 @@
 export const environment = {
   production: false,
   firebaseConfig: {
-    apiKey: "YOUR_API_KEY",
-    authDomain: "YOUR_AUTH_DOMAIN",
-    projectId: "YOUR_PROJECT_ID",
-    storageBucket: "YOUR_STORAGE_BUCKET",
-    messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-    appId: "YOUR_APP_ID",
-    databaseURL: "YOUR_DATABASE_URL"
+    apiKey: "AIzaSyBSBfZuCFaV57E4FBSGXtAEeJatGeS3z4I",
+    authDomain: "lily-portfolio-1dbc3.firebaseapp.com",
+    projectId: "lily-portfolio-1dbc3",
+    storageBucket: "lily-portfolio-1dbc3.appspot.com",
+    messagingSenderId: "363612306046",
+    appId: "1:363612306046:web:3eee8bbd5b21a929d9762f",
+    measurementId: "G-RC9JJX2PJ3",
+    databaseURL: "https://lily-portfolio-1dbc3-default-rtdb.firebaseio.com/"
   }
 };
 
