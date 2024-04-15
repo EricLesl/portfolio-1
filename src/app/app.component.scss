@@ -97,7 +97,7 @@
 
 .content-section{
     display: flex;
-    height: 100%;
+    height: auto;
     margin-bottom: 140px;
     border-radius: 12px;
     box-sizing: border-box;
@@ -156,17 +156,15 @@
 .bubble-bottom-left {
     bottom: -100%;
     left: -30%;
-    transform: translateX(-50%);
     width: 463px;
     height: 331px;
 }
 
 .bubble-left {
-    top: 10%;
-    left: -100%;
-    transform: translateY(-50%);
-    width: 463px;
-    height: 331px;
+    top: -70%;
+    left: -70%;
+    width: 22vw;
+    height: auto;
 }
 
 app-post-it-board{
