@@ -69,7 +69,7 @@ export class PostItBoardComponent {
     const boardRect = this.boardElementRef.nativeElement.getBoundingClientRect();
 
     // Check if the new position is within the boundaries of the board
-    if (newX >= 0 && newX <= boardRect.width && newY >= 0 && newY <= boardRect.height) {
+    if (newX >= 0 && (newX + 150) <= boardRect.width && newY >= 0 && (newY + 150) <= boardRect.height) {
       // Update the note's position relative to the board
       note.x = newX;
       note.y = newY;
