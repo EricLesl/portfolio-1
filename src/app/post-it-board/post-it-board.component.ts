@@ -70,4 +70,12 @@ export class PostItBoardComponent {
     this.dragStartOffsetX = 0;
     this.dragStartOffsetY = 0;
   }
+
+  onNoteEditDone(note: Note, index: number) {
+    // Call the API to save the note
+    // You can use note.text to get the updated text
+    // and index if you need to identify the note further
+    console.log(`Saving note at index ${index} with text: ${note.text}`);
+    // Replace the console.log with your actual API call
+  }
 }
