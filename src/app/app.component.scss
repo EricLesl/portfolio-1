@@ -95,6 +95,17 @@
     box-sizing: border-box;
 }
 
+@media (max-width: 1599px) {
+    .main-content{
+        padding: 2.5%;
+    }
+    .left-side-nav{
+        flex: 0 0 17%;
+    }
+}
+
+
+
 .content-section{
     display: flex;
     height: auto;
@@ -188,6 +199,43 @@
 
 .img-bubble-left {
     transform: scaleX(-1);
+}
+
+@media (max-width: 1599px) {
+    #nameTag{
+        width: 386px;
+        height: 263px;
+        position: relative;
+        z-index: 10;
+    }
+    
+    .bubble-text {
+        font-size: 1.5em;
+    }
+    
+    .bubble-top {
+        top: -115%;
+    }
+    
+    .bubble-right {
+        top: -40%;
+        right: -80%;
+    }
+    
+    .bubble-bottom-right {
+        bottom: -100%;
+        left: 80%;
+    }
+    
+    .bubble-bottom-left {
+        bottom: -100%;
+        left: -60%;
+    }
+    
+    .bubble-left {
+        top: -50%;
+        left: -80%;
+    }
 }
 
 app-post-it-board{
