@@ -8,11 +8,13 @@ import { FormsModule } from '@angular/forms';
 import { AngularFireModule } from "@angular/fire/compat";
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { environment } from 'src/environments/environment';
+import { ProjectsComponent } from './projects/projects.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PostItBoardComponent
+    PostItBoardComponent,
+    ProjectsComponent
   ],
   imports: [
     BrowserModule,

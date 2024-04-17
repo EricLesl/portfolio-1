@@ -1,0 +1,30 @@
+<span class="projects-title">PROJECTS</span>
+<div class="projects-container">
+    <div class="project-rectangle project-ea">
+        <img src="././assets/svgs/ea-logo.svg" alt="EA" class="logo-ea">
+    </div>
+    <div class="project-rectangle project-brainbloom">BRAINBLOOM BOX.</div>
+    <div class="project-rectangle project-aba">
+      <img src="././assets/images/aba-logo.png" alt="ABA Compass Logo" class="logo-aba">
+    </div>
+    <div class="project-rectangle project-milestones">
+        <img src="././assets/images/milestones-logo.png" alt="Milestones" class="logo-milestones">
+    </div>
+</div>
+<span class="projects-title">TESTOMONIALS</span>
+<div class="testimonials-container">
+    <div class="tabs">
+        <div class="tab-buttons">
+            <button class="tab-button active" (click)="openTab($event, 'testimonials')">Colleague and Client Testimonials</button>
+            <button class="tab-button" (click)="openTab($event, 'work-outcomes')">My Work Outcomes</button>
+        </div>
+        <div id="testimonials" class="tab-content active">
+            <!-- Content for Testimonials -->
+            <p>Testimonials will go here...</p>
+        </div>
+        <div id="work-outcomes" class="tab-content">
+            <!-- Content for Work Outcomes -->
+            <p>Work outcomes will go here...</p>
+        </div>
+    </div>
+</div>
