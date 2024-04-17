@@ -247,17 +247,19 @@ app-post-it-board, app-projects{
     border: 6px solid #ded3d3;
 }
 
+
 @media (max-width: 1599px) {
     #section1{
         height: 150%;
     }
 }
 
-@media (max-width: 14500px) {
+@media (max-width: 1450px) {
     #section1{
         height: 120%;
     }
 }
+
 
 #section2{
     width: 100%;
