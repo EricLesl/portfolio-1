@@ -1,0 +1,57 @@
+.grid-container {
+    display: grid;
+    width: 90%;
+    margin: auto;
+    grid-template-columns: 1fr auto 1fr;
+    grid-template-rows: auto auto auto;
+    justify-items: center;
+    align-items: center;
+    position: relative;
+}
+
+.name-tag-image {
+    grid-area: 2 / 2 / 3 / 3; /* Center in the grid */
+    z-index: 1; /* Ensure it's above the text bubbles if they overlap */
+    width: 25em; 
+    height: auto;
+}
+
+.text-bubble {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 2; /* Above the image */
+}
+
+.bubble-image {
+    width: auto;
+    height: 20em;
+}
+
+.bubble-text {
+    color: black;
+    font-family: Signika Negative, sans-serif;
+    font-weight: 700;
+    font-size: 1em;
+    position: absolute;
+}
+
+.top { grid-area: 1 / 2 / 2 / 3; }
+.right { grid-area: 2 / 3 / 3 / 4; }
+.bottom-right { grid-area: 3 / 2 / 4 / 4; }
+.bottom-left { grid-area: 3 / 1 / 4 / 3; }
+.left { grid-area: 2 / 1 / 3 / 2; }
+
+.img-bubble-top {
+    transform: scaleX(-1);
+}
+
+.img-bubble-bottom-right {
+    transform: rotate(180deg) scaleX(-1);
+}
+
+.img-bubble-bottom-left {
+    transform: rotate(180deg);
+}

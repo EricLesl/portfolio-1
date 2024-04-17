@@ -106,122 +106,13 @@
     margin-bottom: 1em;
 }
 
-#nameTag{
-    width: 436px;
-    height: 313px;
-    position: relative;
-    z-index: 10;
-}
-
-.name-tag-container {
-    position: relative;
-}
-
-.text-bubble {
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 22vw;
-    height: 20vw;
-}
-
-.text-bubble img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.bubble-text {
-    position: absolute;
-    color: black;
-    font-family: Signika Negative;
-    font-weight: 700;
-    font-size: 2em;
-    text-align: center;
-    width: 70%;
-    transform: rotate(0deg)!important; 
-}
-
-.bubble-top {
-    top: -105%;
-}
-
-.img-bubble-top {
-    transform: scaleX(-1);
-}
-
-.bubble-right {
-    top: -40%;
-    right: -90%;
-}
-
-.bubble-bottom-right {
-    bottom: -100%;
-    left: 60%;
-}
-
-.img-bubble-bottom-right {
-    transform: rotate(180deg) scaleX(-1);
-}
-
-.bubble-bottom-left {
-    bottom: -100%;
-    left: -80%;
-}
-
-.img-bubble-bottom-left {
-    transform: rotate(180deg);
-}
-
-.bubble-left {
-    top: -50%;
-    left: -100%;
-}
-
-.img-bubble-left {
-    transform: scaleX(-1);
-}
-
-@media (max-width: 1599px) {
-    #nameTag{
-        width: 366px;
-        height: 243px;
-        position: relative;
-        z-index: 10;
-    }
-    
-    .bubble-text {
-        font-size: 1.5em;
-    }
-    
-    .bubble-top {
-        top: -115%;
-    }
-    
-    .bubble-right {
-        top: -40%;
-        right: -90%;
-    }
-    
-    .bubble-bottom-right {
-        bottom: -100%;
-        left: 80%;
-    }
-    
-    .bubble-bottom-left {
-        bottom: -100%;
-        left: -70%;
-    }
-    
-    .bubble-left {
-        top: -50%;
-        left: -100%;
-    }
-}
-
 app-post-it-board, app-projects{
     flex-grow: 1;
+}
+
+app-name-tag{
+    flex-grow: 1;
+    
 }
 
 .about-title{
@@ -231,20 +122,13 @@ app-post-it-board, app-projects{
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-    position: absolute;
-    top: 0;
-    left: .5em;
 }
 
 #section1{
     width: 100%;
-    height: 110%;
     background-color: #F3EFEF;
-    position: relative;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
     border: 6px solid #ded3d3;
+    flex-direction: column;
 }
 
 
