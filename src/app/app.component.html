@@ -3,7 +3,6 @@
   <div class="left-side-nav">
     <div class="inner-nav">
       <div class="nav-item about-nav-item" data-target="section1" (click)="scrollToSection('section1')">About</div>
-      <div class="nav-item approach-nav-item" data-target="section2" (click)="scrollToSection('section2')">Approach</div>
       <div class="nav-item projects-nav-item" data-target="section3" (click)="scrollToSection('section3')">Projects</div>
       <div class="nav-item inclusive-insights-nav-item" data-target="section4" (click)="scrollToSection('section4')">Inclusive Insights</div>
       <div class="nav-item contact-nav-item" data-target="section5" (click)="scrollToSection('section5')">Contact</div>
@@ -12,8 +11,13 @@
 
   <div #mainContent class="main-content">
     <section id="section1" class="content-section">
-      <span class="about-title">Introduction</span>
-      <app-name-tag></app-name-tag>
+      <span class="about-title">Who I Am</span>
+      <div class="who-i-am">
+        <app-name-tag></app-name-tag>
+      </div>
+      <span class="about-title">How I Got Here</span>
+      <div class="how-i-got-here">
+      </div>
     </section>
     <section id="section2" class="content-section"></section>
     <section id="section3" class="content-section"><app-projects></app-projects></section>
