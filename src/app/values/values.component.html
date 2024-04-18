@@ -1,0 +1,23 @@
+<div class="values">
+    <div class="row row-one">
+        <div *ngFor="let box of valueBoxes | slice:0:3" class="value-box">
+            <div class="title-box">
+                <span class="title" [ngClass]="{'title-flipped': box['flipped'] === true}">{{titletext(box)}}</span>
+            </div>
+            <div (click)="readMoreClick(box)" class="read-more" [ngClass]="{'read-flipped': box['flipped'] === true}">
+                <span class="read-more-text">{{boxText(box)}}</span>
+            </div>
+        </div>
+    </div>
+    <br/><br/>
+    <div class="row row-two">
+        <div *ngFor="let box of valueBoxes | slice:3:6" class="value-box">
+            <div class="title-box">
+                <span class="title" [ngClass]="{'title-flipped': box['flipped'] === true}">{{titletext(box)}}</span>
+            </div>
+            <div (click)="readMoreClick(box)" class="read-more" [ngClass]="{'read-flipped': box['flipped'] === true}">
+                <span class="read-more-text">{{boxText(box)}}</span>
+            </div>
+        </div>
+    </div>
+</div>

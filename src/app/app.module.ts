@@ -11,6 +11,7 @@ import { environment } from 'src/environments/environment';
 import { ProjectsComponent } from './projects/projects.component';
 import { NameTagComponent } from './name-tag/name-tag.component';
 import { ContactComponent } from './contact/contact.component';
+import { ValuesComponent } from './values/values.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ContactComponent } from './contact/contact.component';
     PostItBoardComponent,
     ProjectsComponent,
     NameTagComponent,
-    ContactComponent
+    ContactComponent,
+    ValuesComponent
   ],
   imports: [
     BrowserModule,
