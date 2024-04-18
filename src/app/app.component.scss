@@ -47,17 +47,23 @@
     pointer-events: all;
     width: 100%;
     box-sizing: border-box;
-    color: #FFF;
-    text-shadow: 
-    -2px -2px 0 #000,  
-     2px -2px 0 #000,
-    -2px  2px 0 #000,
-     2px  2px 0 #000;
-    font-family: Sniglet;
-    font-size: 40px;
+    color: black;
+    font-family: "Varela Round";
+    font-size: 1.5em;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 600;
     line-height: normal;
+}
+
+.lou-nav-item{
+    background-color: #F8F7FF;
+    border-radius: 15px;
+    border: 3px solid #000;
+    font-weight: 800;
+    text-shadow: none;
+    color: black;
+    font-family: Sniglet;
+    text-align: center;
 }
 
 .about-nav-item{
@@ -122,11 +128,15 @@ app-post-it-board, app-projects{
 .about-title{
     color: #000;
     font-family: "Varela Round";
-    font-size: 4em;
+    font-size: 3em;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
     margin-top: .3em;
+}
+
+#sectionHome{
+    background-color: #F8F7FF;
 }
 
 #section1{
