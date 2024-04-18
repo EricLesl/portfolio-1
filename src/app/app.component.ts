@@ -39,7 +39,6 @@ export class AppComponent {
       const targetNavItem = Array.from(navItems).find(item => item.getAttribute('data-target') === section.getAttribute('id'));
   
       if (section.getAttribute('id') === 'sectionHome') {
-        console.log(visibilityPercentage);
         this.showLouImage = visibilityPercentage >= 50;
       }
 

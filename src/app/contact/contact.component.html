@@ -1,0 +1,31 @@
+<div class="contact-me">
+    <div class="contact-me-title">Contact Me!</div>
+    <div class="contact-form">
+        <span class="services-text">Services</span>
+        <span class="services-desc">Select what best suits your inquiry</span>
+        <div class="selection-row">
+            <div class="selection-box" [ngClass]="{'selected': selectedOption.design === true}" (click)="setSelected('design')">
+                Design
+            </div>
+            <div class="selection-box" [ngClass]="{'selected': selectedOption.research === true}" (click)="setSelected('research')">
+                Research
+            </div>
+            <div class="selection-box" [ngClass]="{'selected': selectedOption.chat === true}" (click)="setSelected('chat')">
+                Just Chat
+            </div>
+        </div>
+        <span class="services-text">Your Details</span>
+        <span class="services-desc">Please enter in your information:</span>
+        <div class="input-row">
+            <input type="text" class="input-box-half" placeholder="Full Name" [(ngModel)]="userInfo.name">
+            <input type="text" class="input-box-half" placeholder="Email" [(ngModel)]="userInfo.email">
+        </div>
+        <div class="input-row">
+            <input type="text" class="input-box-full" placeholder="Company" [(ngModel)]="userInfo.company">
+        </div>
+        <div class="input-row">
+            <textarea  class="text-area"  placeholder="What is your inquiry?"  [(ngModel)]="userInfo.message"></textarea>
+        </div>
+        <div class="submit-button" (click)="submitForm()">Submit</div>
+    </div>
+</div>
