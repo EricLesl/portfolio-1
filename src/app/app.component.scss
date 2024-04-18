@@ -301,3 +301,70 @@ app-post-it-board, app-projects{
     padding: 0 2em 0 2em;
     height: auto;
 }
+
+.mobileInfo{
+    display: none;
+}
+
+.mobile-contact{
+    display: none;
+}
+
+@media only screen and (max-width: 999px) {
+    .mobileInfo{
+        display: block;
+    }
+
+    #section1, #section2, #section3, #section4, .left-side-nav{
+        display: none;
+    }
+
+    .content-section{
+        width: 100%;
+    }
+    
+    #sectionHome{
+        margin: 0;
+        height: 100vh;
+        border-radius: 4px;
+        background-image: linear-gradient(to bottom, #a7c0ef, #ffffff);
+        .title-section{
+            text-align: center;
+            h1{
+                font-size: 15vw;
+            }
+    
+            h2{
+                font-size: 5vw;
+                margin-top: 5vh;
+                margin-left: 0;
+            }
+
+            h3{
+                font-size: 3vw;
+                font-family: Share;
+                font-weight: 500;
+            }
+
+            .mobile-contact{
+                margin-top: 35vh;
+                display: block;
+                color: #7469c6;
+                margin-left: 0;
+
+                a{
+                    text-decoration: none;
+                    color: #7469c6;
+                    margin: 0;
+                    padding: 0;
+                }
+            }
+    
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding-left: 0;
+        }
+    }
+}

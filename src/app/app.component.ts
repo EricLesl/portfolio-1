@@ -11,6 +11,7 @@ export class AppComponent {
   @ViewChild('mainContent') mainContent: ElementRef;
   listenerRemovalFunction: Function;
   showLouImage = true;
+  lilyEmail: string = `LilyanTweddle@gmail.com`;
 
   constructor(private renderer: Renderer2) {
     gsap.registerPlugin(ScrollToPlugin);
