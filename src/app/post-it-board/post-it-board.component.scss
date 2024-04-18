@@ -97,3 +97,19 @@
     font-size: 1em;
     font-family: Varela Round;
   }
+
+  .channel-text{
+    font-family: "Varela Round";
+    color: black;
+    font-size: 1.7em;
+  }
+
+  .social-box{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 3em;
+    margin-top: 3em;
+    cursor: pointer;
+  }
