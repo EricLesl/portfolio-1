@@ -87,4 +87,18 @@ export class PostItBoardComponent {
       }
     });
   }
+
+  openNewTab(type: string){
+    switch(type) {
+      case 'youtube':
+        window.open('https://www.youtube.com', '_blank');
+        break;
+      case 'linkedin':
+        window.open('https://www.linkedin.com/in/lilytweddle/', '_blank');
+        break;
+      case 'tiktok':
+        window.open('https://www.tiktok.com/', '_blank');
+        break;
+    }
+  }
 }

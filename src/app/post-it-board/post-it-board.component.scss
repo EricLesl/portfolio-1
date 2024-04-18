@@ -110,6 +110,10 @@
     align-items: center;
     justify-content: center;
     gap: 3em;
-    margin-top: 3em;
-    cursor: pointer;
+    margin-top: 2em;
+    margin-bottom: 2em;
+
+    img{
+      cursor: pointer;
+    }
   }
