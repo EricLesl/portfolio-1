@@ -2,7 +2,10 @@
 <div class="container">
   <div class="left-side-nav">
     <div class="inner-nav">
-      <div class="nav-item lou-nav-item" data-target="sectionHome" (click)="scrollToSection('sectionHome')">Lou.</div>
+      <div [ngStyle]="{'background-color': showLouImage ? '#cec9c8' : '#F8F7FF'}" class="nav-item lou-nav-item"  data-target="sectionHome" (click)="scrollToSection('sectionHome')">
+        <img class="lou-gif" *ngIf="showLouImage" src="./assets/gifs/lou.gif" alt="Lou" />
+        <div *ngIf="!showLouImage">lou.</div>
+      </div>
       <div class="nav-item about-nav-item" data-target="section1" (click)="scrollToSection('section1')">About</div>
       <div class="nav-item projects-nav-item" data-target="section2" (click)="scrollToSection('section2')">Projects</div>
       <div class="nav-item inclusive-insights-nav-item" data-target="section3" (click)="scrollToSection('section3')">Inclusive Insights</div>
@@ -11,7 +14,15 @@
   </div>
 
   <div #mainContent class="main-content">
-    <section id="sectionHome" class="content-section"></section>
+    <section id="sectionHome" class="content-section">
+      <div class="top-links">
+      </div>
+      <div class="title-section">
+        <h1>Lilyan</h1>
+        <h1>Tweddle</h1>
+        <h2>Research. Design. Accessibility.</h2>
+      </div>
+    </section>
     <section id="section1" class="content-section">
       <span class="about-title">Who I Am</span>
       <div class="who-i-am">

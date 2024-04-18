@@ -10,6 +10,7 @@ import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 export class AppComponent {
   @ViewChild('mainContent') mainContent: ElementRef;
   listenerRemovalFunction: Function;
+  showLouImage = true;
 
   constructor(private renderer: Renderer2) {
     gsap.registerPlugin(ScrollToPlugin);
@@ -37,6 +38,11 @@ export class AppComponent {
       // Find the corresponding nav item
       const targetNavItem = Array.from(navItems).find(item => item.getAttribute('data-target') === section.getAttribute('id'));
   
+      if (section.getAttribute('id') === 'sectionHome') {
+        console.log(visibilityPercentage);
+        this.showLouImage = visibilityPercentage >= 50;
+      }
+
       if (visibilityPercentage >= 50) {
         this.renderer.setStyle(targetNavItem, 'flex-grow', '4');
       } else if (sectionBottom <= 0) {
