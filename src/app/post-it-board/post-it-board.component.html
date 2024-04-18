@@ -1,4 +1,5 @@
-<div class="post-it-board" #board>
+<div class="post-it-board-container">
+  <div class="post-it-board" #board>
     <ng-container *ngFor="let note of notes$ | async; let i = index">
       <textarea [ngStyle]="{'background-color': note.color}" 
                 class="sticky-note" 
@@ -15,4 +16,15 @@
       <img id="" src="././assets/svgs/add-note.svg" alt="Add">
     </div>
   </div>
+  <img src="../../assets/images/legs.png" class="legs" alt="Legs">
+  <div class="image-container">
+    <img class="bubble" src="../../assets/images/projects-bubble.png" alt="Bubble" />
+    <span class="info-text">Did you know that people with disabilities are frequently overlooked in user testing?</span>
+    <span class="info-text-desc">This oversight leads to designs that fail to accomodate all users, particularly those with disabilities.</span>
+  </div>
+  <div class="interactive-desc">
+    <span class="desc-text">This interactive space is an initiative to where your thoughts drive UX design forward. Leave a sticky note with your feedback, brainstorm solutions, or suggest new ideas for what an accessible user experience is for you.<br/><br/>Each thought you share helps refine and advance our approach to creating more inclusive digital spaces. Let's innovate together—one idea at a time!</span>
+  </div>
+</div>
+
   

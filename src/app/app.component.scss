@@ -144,7 +144,7 @@ app-post-it-board, app-projects{
     display: flex;
     flex-direction: column;
     margin-top: 24px;
-    height: calc(100vh - 24px);
+    height: calc(99vh - 24px);
     background-color: #F8F7FF;
     border-radius: 15px;
     border: 3px solid #000;
@@ -281,15 +281,16 @@ app-post-it-board, app-projects{
 #section2{
     height: auto;
     background-color: #FAEFCD;
-    border: 6px solid #ECC444;
+    border: 3px solid #ECC444;
 }
 
 #section3{
     background-color: #FAFAFA;
     border-radius: 15px;
-    border: 6px solid #CC3879;
-    padding: 55px;
+    border: 3px solid #CC3879;
+    padding: 0 3em 3em 3em;
     height: auto;
+    flex-direction: column;
 }
 
 #section4{
